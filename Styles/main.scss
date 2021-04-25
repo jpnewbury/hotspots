@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+
+$font-family: "Nunito Sans", sans-serif;
+$font-size: 1rem;
+$padding: 7px;
+$margin: 5px;
+$green: rgb(16, 139, 0);
+$blue: rgb(0, 110, 255);
+$gold: rgb(197, 179, 88);
+$black: rgb(0, 0, 0);
+$gray-1: rgb(50, 50, 50);
+$gray-2: rgb(75, 75, 75);
+$gray-3: rgb(100, 100, 100);
+$gray-4: rgb(125, 125, 125);
+$gray-5: rgb(150, 150, 150);
+$gray-6: rgb(175, 175, 175);
+$gray-7: rgb(200, 200, 200);
+$gray-8: rgb(225, 225, 225);
+$gray-9: rgb(250, 250, 250);
+$transition: all 0.35s ease;
+$border: 1px solid black;
+$box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+@mixin block {
+    // basic margin and padding
+    padding: $padding;
+    margin: $margin;
+}
+
+@mixin border {
+    border: $border;
+    border-radius: 5px;
+}
+
+@mixin center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: $font-family;
+    color: $gray-1;
+    background-color: $gray-9;
+}
+button {
+    @include border;
+    margin: $margin;
+    padding: $padding;
+    background: $gray-9;
+    box-shadow: $box-shadow;
+}
+p {
+    margin-bottom: $margin;
+}
+h2 {
+    font-size: 1.6rem;
+}
+h3 {
+    font-size: 1.2rem;
+}
+nav {
+    background: $gray-4;
+    padding: 20px;
+    color: $gray-9;
+    a {
+        color: $gray-9;
+    }
+}
+a:hover,
+a:active {
+    color: $gray-2;
+}
+input[type="text"] {
+    width: 100%;
+    padding: $padding;
+    font-weight: 600;
+    margin: 8px 0;
+    height: 40px;
+    box-sizing: border-box;
+    font-size: $font-size;
+}
+input[type="email"] {
+    max-width: 400px;
+    padding: $padding;
+    font-weight: 600;
+    margin: 8px 0;
+    height: 40px;
+    box-sizing: border-box;
+    font-size: $font-size;
+}
+input[type="password"] {
+    max-width: 400px;
+    padding: $padding;
+    font-weight: 600;
+    margin: 8px 0;
+    height: 40px;
+    box-sizing: border-box;
+    font-size: $font-size;
+}
+
+input[type="text"]:focus {
+    background-color: $gray-3;
+    color: $gray-9;
+}
+textarea {
+    font-family: $font-family;
+    @include border;
+    @include block;
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    resize: none;
+}
+textarea:focus {
+    background-color: $gray-3;
+    color: $gray-9;
+}
+select {
+    @include border;
+    width: 100%;
+    padding: 16px 20px;
+    background-color: $gray-9;
+    font-size: $font-size;
+    font-weight: 600;
+}
+select:focus {
+    background-color: $gray-3;
+    color: $gray-9;
+}
+
+.alert {
+    color: red;
+    font-weight: 900;
+    font-size: 2rem;
+    @include center;
+}
+.card {
+    max-width: 80px;
+    margin: $margin;
+}
+.center {
+    @include center;
+}
+.container {
+    max-width: 1200px;
+    @include block;
+}
+.header {
+    padding: $padding;
+    @include border;
+    font-weight: 600;
+    background: $gray-8;
+}
+.hidden {
+    display: none;
+}
+.location {
+    @include block;
+    @include border;
+    background-color: $gray-9;
+    box-shadow: $box-shadow;
+}
+.block {
+    @include block;
+}
+.emphasis {
+    font-weight: 900;
+    color: $blue;
+}
+.icon-small {
+    cursor: pointer;
+    @include center;
+}
+
+.grid-ish {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid-ish > * {
+    flex: 1 1 125px;
+}
+.grid-small {
+    @include block;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.grid-small > * {
+    flex: 1 1 50px;
+}
+
+.small_icon {
+    height: 40px;
+    width: 40px;
+}
+.small-header {
+    max-width: 370px;
+}
+.text-center {
+    font-size: 0.75rem;
+    text-align: center;
+    font-weight: 900;
+}
+
+.post__card {
+    @include block;
+    @include border;
+    background: $gray-9;
+}
+.col-2 {
+    display: grid;
+    grid-template-columns: 80% 20%;
+}
+.col-2l {
+    display: grid;
+    grid-template-columns: 70px 200px;
+}
+.col-2b {
+    display: grid;
+    grid-template-columns: 160px 200px;
+}
+.splash {
+    min-height: 80vh;
+}
+.weather_icon {
+    height: 70px;
+    fill: $gray-1;
+    @include block;
+}
+.weather_icon_alert {
+    height: 70px;
+    fill: red;
+    @include block;
+}
+.weather_icon_alert {
+    height: 70px;
+    fill: red;
+    @include block;
+}
+.weather_button {
+    cursor: pointer;
+    margin: $margin;
+    padding: $padding;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
